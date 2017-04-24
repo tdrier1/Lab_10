@@ -10,26 +10,22 @@ namespace Lab_10
     {
         private string Title;
         private string Category;
+        private int Select;
 
         public string TitleProp{ get { return Title; } set { Title = value; } }
 
         public string CategoryProp{ get { return Category; } set { Category = value; } }
 
-        public Movie(string TitleInput, string CategoryInput)
+        public int NumSelect { get { return Select; } set { Select = value; } }
+
+        public Movie(string TitleInput, string CategoryInput, int NumSelect)
         {
             Title = TitleInput;
             Category = CategoryInput;
+            Select = NumSelect;
         }
 
-        public string GetTitle()
-        {
-            return Title;
-        }
-
-        public string GetCategory()
-        {
-            return Category;
-        }
+       
 
     }
 }

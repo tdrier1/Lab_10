@@ -8,35 +8,28 @@ namespace Lab_10
 {
     class Validation
     {
-
-        public static string InputVerify()
+        public static int GetIntWithinRange()
         {
-            bool run = true;
-            string input;
+            int Min = 1;
+            int Max = 4;
+            int value;
 
-            List<string> InputList = new List<string>();
-
-            InputList.Add("horror");
-            InputList.Add("scifi");
-            InputList.Add("drama");
-            InputList.Add("animation");
-
-            do
+            while (true)
             {
-                input = Console.ReadLine().ToLower();
-
-                    if (InputList.Any(input.Contains))
-                    {
-                        run = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nPlease enter: horror, animation, drama or scifi!");
-                    }
-
-            } while (run == true);
-
-            return input;
+                if (!Int32.TryParse(Console.ReadLine(), out value))
+                {
+                    Console.Write("Please enter a valid number between 1 and 4:");
+                }
+                else if (value < Min || value > Max)
+                {
+                    Console.Write("Please enter a valid input year between {0} and {1}: ", Min, Max);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return value;
         }
 
         public static bool Continue()
@@ -73,6 +66,7 @@ namespace Lab_10
                     check = false;
                 }
             } while (check == true);
+
             return run;
         }
 
